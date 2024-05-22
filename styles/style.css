@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+
+:root {
+  /* Colors */
+  --clr-cream-bg: hsl(30 38% 92%);
+  --clr-greenish: hsl(158 36% 37%);
+  --clr-text-default: hsl(228 12% 48%);
+  --clr-text-title: hsl(212 21% 14%);
+
+  /* Font Families */
+  --ff-regular: "Montserrat", sans-serif;
+  --ff-fancy: "Fraunces", serif;
+
+  /* Font Weights */
+  --fw-regular-default: 500;
+  --fw-regular-bold: 700;
+}
+
+body {
+  background-color: var(--clr-cream-bg);
+  display: grid;
+  place-content: center;
+}
+
+.product {
+  background-color: #fff;
+  display: grid;
+  margin: 1rem;
+  border-radius: 0.5rem;
+}
+
+img {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.product__content {
+  padding: 1rem;
+}
+
+.product__category {
+  color: var(--clr-text-default);
+  font-family: var(--ff-regular);
+  font-weight: var(--fw-regular-default);
+  font-size: 0.875rem;
+  letter-spacing: 0.3rem;
+  margin-block-start: 0.5rem;
+}
+
+.product__title {
+  font-family: var(--fw-fancy);
+  color: var(--clr-text-title);
+  font-size: 2rem;
+  font-weight: var(--fw-regular-bold);
+}
