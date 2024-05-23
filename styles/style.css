@@ -91,6 +91,7 @@ img {
 
 .product__old-price {
   color: var(--clr-text-default);
+  font-size: 1.05rem;
 }
 
 .add-to-cart {
