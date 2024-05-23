@@ -20,13 +20,18 @@ body {
   place-content: center;
   font-family: var(--ff-regular);
   font-weight: var(--fw-regular-default);
+  line-height: 1.7;
 }
 
 .product {
+  --content-spacing: 1rem;
+  --content-padding: 1.5rem;
   background-color: #fff;
   display: grid;
-  margin: 1rem;
+  overflow: hidden;
   border-radius: 0.5rem;
+  max-width: 610px;
+  margin: 1rem;
 }
 
 img {
@@ -35,16 +40,15 @@ img {
 }
 
 .product__content {
-  padding: 1rem;
+  padding: var(--content-padding);
+  display: grid;
+  gap: var(--content-spacing);
 }
 
 .product__category {
   color: var(--clr-text-default);
-
   font-size: 0.875rem;
   letter-spacing: 0.3rem;
-  margin-block-start: 0.5rem;
-  margin-inline-start: 0.5rem;
 }
 
 .product__title {
@@ -52,15 +56,11 @@ img {
   color: var(--clr-text-title);
   font-size: 2rem;
   font-weight: var(--fw-regular-bold);
-  line-height: 1;
-  margin-block-start: 0.75rem;
-  margin-inline-start: 0.5rem;
+  line-height: 1.05;
 }
 
 .product__description {
   color: var(--clr-text-default);
-  margin-inline-start: 0.5rem;
-  margin-block-start: 1rem;
   word-spacing: 0.1rem;
   font-size: 14px;
 }
@@ -79,8 +79,7 @@ img {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  margin-block-start: 1.5rem;
-  margin-inline-start: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .product__current-price {
@@ -94,4 +93,44 @@ img {
   color: var(--clr-text-default);
 }
 
-/* TODO .add-to-cart */
+.add-to-cart {
+  width: 100%;
+  background-color: var(--clr-greenish);
+  color: #fff;
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5em;
+  font-weight: var(--fw-regular-bold);
+  display: inline-flex;
+  justify-content: center;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.add-to-cart::before {
+  content: "";
+  background-image: url("../images/icon-cart.svg");
+  width: 15px;
+  height: 16px;
+  display: inline-block;
+}
+
+@media (min-width: 610px) {
+  .product {
+    grid-template-columns: 1fr 1fr;
+    --content-padding: 2rem;
+  }
+  img {
+    border-bottom-left-radius: 0.5rem;
+    border-top-right-radius: 0;
+  }
+}
+
+button {
+  transition: 0.25s background-color linear;
+}
+
+button:is(:hover, :focus) {
+  background-color: #174131;
+  cursor: pointer;
+}
